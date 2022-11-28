@@ -25,7 +25,7 @@ public class QuizDataService {
             URI uri = UriComponentsBuilder.fromHttpUrl("https://opentdb.com/api.php")
                     .queryParam("amount", 2)
                     .queryParam("category", 25)
-                    .queryParam("diffuculty", "medium")
+                    .queryParam("difficulty", "medium")
                     .build().toUri();
             log.info("Quiz question retrieve URL: " + uri);
 

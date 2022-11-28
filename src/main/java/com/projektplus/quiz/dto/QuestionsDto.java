@@ -3,6 +3,7 @@ package com.projektplus.quiz.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -14,7 +15,9 @@ public class QuestionsDto {
     private List<QuestionDto> results;
 
 
-
+    @NoArgsConstructor
+    @Getter
+    @ToString
     public static class QuestionDto {
         private String category;
         private String type;
