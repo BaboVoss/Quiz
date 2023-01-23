@@ -1,6 +1,8 @@
 package com.projektplus.quiz.frontend;
 
+import com.projektplus.quiz.services.QuizDataService;
 import lombok.extern.java.Log;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @Log
 public class FrontendController {
+    @Autowired
+    private QuizDataService quizDataService;
     @GetMapping("/")
     public String hello(Model model){
         model.addAttribute("message", "some message");
@@ -19,6 +23,7 @@ public class FrontendController {
     @GetMapping("/select")
     public String select (Model model){
         model.addAttribute("gameOptions", new GameOptions());
+        model.addAttribute("categories", quizDataService.getQuizCategories());
         return "select";
     }
 
@@ -27,4 +32,5 @@ public class FrontendController {
         log.info ("Form submitted with data: " + gameOptions);
         return "index";
     }
+
 }
