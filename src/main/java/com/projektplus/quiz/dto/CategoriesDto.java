@@ -21,5 +21,6 @@ public class CategoriesDto {
         private int id;;
         private String name;
     }
+    
 
 }

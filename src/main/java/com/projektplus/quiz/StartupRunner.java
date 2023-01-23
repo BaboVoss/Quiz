@@ -27,7 +27,7 @@ public class StartupRunner implements CommandLineRunner {
         playerRepository.save(new PlayerEntity("John"));
         playerRepository.save(new PlayerEntity("Harry"));
         playerRepository.save(new PlayerEntity("George"));
-        quizDataService.getQuizCategories();
+
         
 
         log.info("List of players from database: ");
